@@ -1,10 +1,5 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
+import TodaysPrice from "@/components/Fragments/TodaysPrice";
 
 export default function Home() {
-  return (
-    <main>
-      <section></section>
-    </main>
-  );
+  return <TodaysPrice />;
 }

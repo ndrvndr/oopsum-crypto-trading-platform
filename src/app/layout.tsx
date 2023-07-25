@@ -44,10 +44,10 @@ export default function RootLayout({
         <div className='flex'>
           <aside>
             <div>
-              <div className='mt-[35px] mb-[81px] ml-[30px]'>
+              <div className='mb-[81px]'>
                 <Image src={Logo} alt='oopsom logo' />
               </div>
-              <ul className='ml-[30px]'>
+              <ul className='w-[181px]'>
                 {icons.map((icon, index) => (
                   <li key={index}>
                     <Image src={icon.url} alt={icon.name + "Icon"} />
@@ -57,7 +57,7 @@ export default function RootLayout({
               </ul>
             </div>
 
-            <div className='mb-[46px] ml-[30px]'>
+            <div>
               <div className='logout-button'>
                 <Image src={Logout_Icon} alt='Logout Icon' />
                 <span>Logout</span>
@@ -74,35 +74,37 @@ export default function RootLayout({
             </div>
           </aside>
 
-          <nav className='pt-5 p-[30px] flex justify-between'>
-            <div>
-              <h1>Dashboard</h1>
-              <p>Updated on 23 May 2023</p>
-            </div>
+          <div className='flex flex-col w-full h-fit pt-[20px] pl-[30px] pr-[30px]'>
+            <nav className='flex justify-between'>
+              <div>
+                <h1>Dashboard</h1>
+                <p>Updated on 23 May 2023</p>
+              </div>
 
-            <div className='flex items-center'>
-              <div className='search-box'>
-                <div className='search-ic-container'>
-                  <Image src={Search_Icon} alt='Search Icon' />
+              <div className='flex items-center'>
+                <div className='search-box'>
+                  <div className='search-ic-container'>
+                    <Image src={Search_Icon} alt='Search Icon' />
+                  </div>
+
+                  <input type='text' placeholder='Search your coins...' />
                 </div>
 
-                <input type='text' placeholder='Search your coins...' />
-              </div>
+                <div className='w-[50px] h-[50px] bg-[#151718] flex items-center justify-center rounded-full mr-[10px]'>
+                  <Image src={Notification_Icon} alt='Notification Icon' />
+                </div>
 
-              <div className='w-[50px] h-[50px] bg-[#151718] flex items-center justify-center rounded-full mr-[10px]'>
-                <Image src={Notification_Icon} alt='Notification Icon' />
+                <div className='flex items-center justify-center'>
+                  <div className='w-[50px] h-[50px] bg-[#151718] rounded-full mr-3'></div>
+                  <span className='mr-2 text-white'>Alexim</span>
+                  <Image src={DropDown_Icon} alt='Drop Down Icon' />
+                </div>
               </div>
+            </nav>
 
-              <div className='flex items-center justify-center'>
-                <div className='w-[50px] h-[50px] bg-[#151718] rounded-full mr-3'></div>
-                <span className='mr-2 text-white'>Alexim</span>
-                <Image src={DropDown_Icon} alt='Drop Down Icon' />
-              </div>
-            </div>
-          </nav>
+            <main className='flex items-center justify-center'>{children}</main>
+          </div>
         </div>
-
-        {children}
       </body>
     </html>
   );

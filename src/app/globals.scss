@@ -139,8 +139,8 @@ body {
   background-color: #0d0d0d;
 
   aside {
-    width: 260px;
     height: 100vh;
+    padding: 35px 49px 46px 30px;
     background-color: #101111;
     display: flex;
     flex-direction: column;
@@ -200,7 +200,7 @@ body {
   }
 
   nav {
-    width: 100vw;
+    width: 100%;
     height: fit-content;
     display: flex;
     align-items: center;
