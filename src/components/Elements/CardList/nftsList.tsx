@@ -42,7 +42,7 @@ export default async function NftsList() {
       </div>
 
       <ul className='space-y-2'>
-        {nftsList.data.map((nft: Nft, index: number) => {
+        {nftsList.data.slice(0, 3).map((nft: Nft, index: number) => {
           const listNumber = index + 1;
           return (
             <li

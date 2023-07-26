@@ -56,7 +56,7 @@ export default async function TrendingCoinsList() {
       </div>
 
       <ul className='space-y-2'>
-        {trendingCoins.data.map((coin: Coin, index: number) => {
+        {trendingCoins.data.slice(0, 3).map((coin: Coin, index: number) => {
           const listNumber = index + 1;
           return (
             <li
