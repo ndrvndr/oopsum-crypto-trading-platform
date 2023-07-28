@@ -74,8 +74,8 @@ export default function RootLayout({
             </div>
           </aside>
 
-          <div className='flex flex-col w-full h-fit pt-[20px] pl-[30px] pr-[30px]'>
-            <nav className='flex justify-between'>
+          <div className='flex flex-col w-full h-fit pl-[30px] pr-[30px]'>
+            <nav className='flex justify-between h-[90px] sticky top-0 bg-[#0D0D0D]'>
               <div>
                 <h1>Dashboard</h1>
                 <p>Updated on 23 May 2023</p>

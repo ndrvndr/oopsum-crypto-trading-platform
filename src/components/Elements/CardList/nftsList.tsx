@@ -2,6 +2,7 @@ import * as React from "react";
 import Image from "next/image";
 import styles from "./cardList.module.scss";
 import Nft_Icon from "../../../assets/icons-nft.png";
+import axios from "axios";
 
 interface Nft {
   id: string;
@@ -12,13 +13,12 @@ interface Nft {
 }
 
 export async function getNftsList() {
-  const response = await fetch(
+  const response = await axios.get(
     "https://api.coingecko.com/api/v3/nfts/list?per_page=7&page=1"
   );
-  const data = await response.json();
 
   return {
-    data,
+    response: response.data,
     revalidate: 300,
   };
 }
@@ -42,7 +42,7 @@ export default async function NftsList() {
       </div>
 
       <ul className='space-y-2'>
-        {nftsList.data.slice(0, 3).map((nft: Nft, index: number) => {
+        {nftsList.response.slice(0, 5).map((nft: Nft, index: number) => {
           const listNumber = index + 1;
           return (
             <li

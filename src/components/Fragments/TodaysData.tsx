@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function TodaysData() {
   return (
-    <section className='mt-[50px] max-w-[1120px]'>
+    <section className='mt-[30px] max-w-[1120px]'>
       <p className='text-[#A1A1A1] italic text-[26px]'>
         Today&apos;s Market Data by{" "}
         <Link href='https://www.coingecko.com/en/api' className='text-white'>

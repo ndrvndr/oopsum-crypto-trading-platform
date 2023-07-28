@@ -2,6 +2,7 @@ import * as React from "react";
 import Image from "next/image";
 import styles from "./cardList.module.scss";
 import Fire_Icon from "../../../assets/fire.svg";
+import axios from "axios";
 
 interface mappedCoin {
   item: {
@@ -22,12 +23,11 @@ interface Coin {
 }
 
 export async function getTrendingCoins() {
-  const response = await fetch(
+  const response = await axios.get(
     "https://api.coingecko.com/api/v3/search/trending"
   );
-  const data = await response.json();
 
-  const mappedData = data.coins.map((coin: mappedCoin) => ({
+  const mappedData = response.data.coins.map((coin: mappedCoin) => ({
     id: coin.item.coin_id,
     image: coin.item.thumb,
     name: coin.item.name,
@@ -56,7 +56,7 @@ export default async function TrendingCoinsList() {
       </div>
 
       <ul className='space-y-2'>
-        {trendingCoins.data.slice(0, 3).map((coin: Coin, index: number) => {
+        {trendingCoins.data.slice(0, 5).map((coin: Coin, index: number) => {
           const listNumber = index + 1;
           return (
             <li

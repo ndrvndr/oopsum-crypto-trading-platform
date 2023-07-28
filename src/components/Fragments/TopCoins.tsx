@@ -1,6 +1,7 @@
 import CardCoin from "../Elements/CardCoin";
 import Dropdown_Icon from "../../assets/aside-assets/dropDown.svg";
 import Image from "next/image";
+import axios from "axios";
 
 interface mappedCoin {
   id: string;
@@ -18,7 +19,7 @@ interface Coin {
   atl_change_percentage: number;
 }
 
-async function getTopCoins() {
+export async function getTopCoins() {
   const response = await fetch(
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en"
   );
@@ -34,13 +35,12 @@ async function getTopCoins() {
 
   return {
     data: mappedData,
-    revalidate: 300,
+    revalidate: 10,
   };
 }
 
 export default async function TopCoins() {
   const topCoins = await getTopCoins();
-  console.log(topCoins);
 
   return (
     <section className='mt-[30px] mb-[30px] w-full max-w-[1120px]'>
