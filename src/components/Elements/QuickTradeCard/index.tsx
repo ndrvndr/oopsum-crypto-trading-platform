@@ -13,6 +13,17 @@ export default function QuickTradeCard() {
     setIsBuy(false);
   };
 
+  const [type, setType] = React.useState("limit");
+  const handleClickLimit = () => {
+    setType("limit");
+  };
+  const handleClickMarket = () => {
+    setType("market");
+  };
+  const handleClickStopLimit = () => {
+    setType("stopLimit");
+  };
+
   return (
     <div className='w-[551px] h-[508px] bg-[#151718] rounded-[34px] pt-[19px] pr-4 pb-[30px] pl-4'>
       <div className='flex justify-between items-center'>
@@ -38,14 +49,35 @@ export default function QuickTradeCard() {
       </div>
 
       <ul className='flex gap-x-2 mt-[18px]'>
-        <li className='py-2 px-4 bg-white rounded-[20px] font-medium text-sm w-fit'>
-          Limit
+        <li>
+          <button
+            onClick={handleClickLimit}
+            className={`py-2 px-4 border border-solid border-[#E1E1E1] rounded-[20px] font-medium text-sm w-fit ${
+              type === "limit" ? "bg-white" : "bg-transparent text-white"
+            }`}
+          >
+            Limit
+          </button>
         </li>
-        <li className='py-2 px-4 border border-solid border-[#E1E1E1] rounded-[20px] font-medium text-sm w-fit text-white'>
-          Market
+        <li>
+          <button
+            onClick={handleClickMarket}
+            className={`py-2 px-4 border border-solid border-[#E1E1E1] rounded-[20px] font-medium text-sm w-fit ${
+              type === "market" ? "bg-white" : "bg-transparent text-white"
+            }`}
+          >
+            Market
+          </button>
         </li>
-        <li className='py-2 px-4 border border-solid border-[#E1E1E1] rounded-[20px] font-medium text-sm w-fit text-white'>
-          Stop limit
+        <li>
+          <button
+            onClick={handleClickStopLimit}
+            className={`py-2 px-4 border border-solid border-[#E1E1E1] rounded-[20px] font-medium text-sm w-fit ${
+              type === "stopLimit" ? "bg-white" : "bg-transparent text-white"
+            }`}
+          >
+            Stop limit
+          </button>
         </li>
       </ul>
 

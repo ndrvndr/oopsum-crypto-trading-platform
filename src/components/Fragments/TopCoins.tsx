@@ -1,7 +1,6 @@
 import CardCoin from "../Elements/CardCoin";
 import Dropdown_Icon from "../../assets/aside-assets/dropDown.svg";
 import Image from "next/image";
-import axios from "axios";
 
 interface mappedCoin {
   id: string;

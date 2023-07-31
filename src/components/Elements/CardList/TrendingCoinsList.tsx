@@ -22,27 +22,41 @@ interface Coin {
   price: number;
 }
 
-export async function getTrendingCoins() {
-  const response = await axios.get(
-    "https://api.coingecko.com/api/v3/search/trending"
-  );
+// export async function getBitcoinPrice() {
+//   try {
+//     const response = await axios.get(
+//       "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
+//     );
 
-  const mappedData = response.data.coins.map((coin: mappedCoin) => ({
-    id: coin.item.coin_id,
-    image: coin.item.thumb,
-    name: coin.item.name,
-    symbol: coin.item.symbol,
-    price: coin.item.price_btc,
-  }));
+//     return response.data.bitcoin.usd;
+//   } catch (error) {
+//     console.error("Error fetching Bitcoin price:", error);
+//     throw error;
+//   }
+// }
 
-  return {
-    data: mappedData,
-    revalidate: 300,
-  };
-}
+// export async function getTrendingCoins() {
+//   const response = await axios.get(
+//     "https://api.coingecko.com/api/v3/search/trending"
+//   );
+
+//   const mappedData = response.data.coins.map((coin: mappedCoin) => ({
+//     id: coin.item.coin_id,
+//     image: coin.item.thumb,
+//     name: coin.item.name,
+//     symbol: coin.item.symbol,
+//     price: coin.item.price_btc,
+//   }));
+
+//   return {
+//     data: mappedData,
+//     revalidate: 300,
+//   };
+// }
 
 export default async function TrendingCoinsList() {
-  const trendingCoins = await getTrendingCoins();
+  // const trendingCoins = await getTrendingCoins();
+  // const bitcoinPrice = await getBitcoinPrice();
 
   return (
     <div className={styles.card_list}>
@@ -55,9 +69,11 @@ export default async function TrendingCoinsList() {
         <span className='text-[#77ED91] font-medium text-sm'>See all</span>
       </div>
 
-      <ul className='space-y-2'>
+      {/* <ul className='space-y-2'>
         {trendingCoins.data.slice(0, 5).map((coin: Coin, index: number) => {
           const listNumber = index + 1;
+          const coinPriceInUSD = (coin.price * bitcoinPrice).toFixed(2);
+
           return (
             <li
               key={coin.id}
@@ -77,11 +93,11 @@ export default async function TrendingCoinsList() {
                   <span className='text-[#A1A1A1] text-xs'>{coin.symbol}</span>
                 </div>
               </div>
-              <span className='text-[#2DC24E]'>{coin.price + " BTC"}</span>
+              <span className='text-[#2DC24E]'>{"US$" + coinPriceInUSD}</span>
             </li>
           );
         })}
-      </ul>
+      </ul> */}
     </div>
   );
 }

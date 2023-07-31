@@ -152,16 +152,6 @@ body {
     position: sticky;
     top: 0;
 
-    li {
-      color: #e1e1e1;
-      display: flex;
-      align-items: center;
-    }
-
-    li:not(:last-child) {
-      margin-bottom: 38px;
-    }
-
     .logout-button {
       display: flex;
       align-items: center;
