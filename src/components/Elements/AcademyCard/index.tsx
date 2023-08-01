@@ -4,13 +4,22 @@ import Description from "./Description";
 import PlayButton from "@/components/Elements/AcademyCard/PlayButton";
 import Level from "./Level";
 
-export default function AcademyCard() {
+interface AcademyCardProps {
+  image: string;
+  level: string;
+  description: string;
+  date: string;
+  duration: string;
+}
+
+export default function AcademyCard(props: AcademyCardProps) {
+  const { image, level, description, date, duration } = props;
   return (
     <div className='w-[265px] h-[278px] relative'>
-      <Image src={pic1} alt='Pic 1' />
-      <Level />
+      <Image src={image} alt='Image Preview Lesson' />
+      <Level level={level} />
       <PlayButton />
-      <Description />
+      <Description description={description} date={date} duration={duration} />
     </div>
   );
 }
