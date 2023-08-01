@@ -1,13 +1,13 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import Dashboard_Icon from "../../../assets/aside-assets/dashboard_icon.svg";
-import Portfolio_Icon from "../../../assets/aside-assets/portfolio_icon.svg";
-import Trading_Icon from "../../../assets/aside-assets/trade_icon.svg";
-import Watchlist_Icon from "../../../assets/aside-assets/watchlist_icon.svg";
-import Academy_Icon from "../../../assets/aside-assets/academy_icon.svg";
-import Profile_Icon from "../../../assets/aside-assets/profile_icon.svg";
-import Wallet_Icon from "../../../assets/aside-assets/wallet_icon.svg";
+import Dashboard_Icon from "@/assets/aside-assets/dashboard_icon.svg";
+import Portfolio_Icon from "@/assets/aside-assets/portfolio_icon.svg";
+import Trading_Icon from "@/assets/aside-assets/trade_icon.svg";
+import Watchlist_Icon from "@/assets/aside-assets/watchlist_icon.svg";
+import Academy_Icon from "@/assets/aside-assets/academy_icon.svg";
+import Profile_Icon from "@/assets/aside-assets/profile_icon.svg";
+import Wallet_Icon from "@/assets/aside-assets/wallet_icon.svg";
 
 export default function NavList() {
   const pathname = usePathname();

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Image_Logo from "../../../assets/logo.svg";
+import Image_Logo from "@/assets/logo.svg";
 
 export default function Logo() {
   return (

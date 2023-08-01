@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Maximize_Icon from "../../../assets/maximize.svg";
+import Maximize_Icon from "@/assets/maximize.svg";
 
 interface CardCoinProps {
   img: string;

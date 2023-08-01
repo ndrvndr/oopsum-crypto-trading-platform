@@ -1,4 +1,3 @@
-import pic1 from "@/assets/academy/pic1.svg";
 import Image from "next/image";
 import Description from "./Description";
 import PlayButton from "@/components/Elements/AcademyCard/PlayButton";

@@ -1,9 +1,9 @@
 import * as React from "react";
 import Image from "next/image";
-import Profile from "../../../assets/profile.svg";
-import Search_Icon from "../../../assets/aside-assets/search.svg";
-import Notification_Icon from "../../../assets/aside-assets/notification.svg";
-import DropDown_Icon from "../../../assets/aside-assets/dropDown.svg";
+import Profile from "@/assets/profile.svg";
+import Search_Icon from "@/assets/aside-assets/search.svg";
+import Notification_Icon from "@/assets/aside-assets/notification.svg";
+import DropDown_Icon from "@/assets/aside-assets/dropDown.svg";
 import { usePathname, useRouter } from "next/navigation";
 
 export default function Header() {

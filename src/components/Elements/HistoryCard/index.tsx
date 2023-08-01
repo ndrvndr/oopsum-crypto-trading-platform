@@ -1,4 +1,4 @@
-import SushiSwap from "../../../assets/SushiSwap.svg";
+import SushiSwap from "@/assets/SushiSwap.svg";
 import Image from "next/image";
 
 export default function HistoryCard() {

@@ -1,7 +1,7 @@
 import * as React from "react";
 import Image from "next/image";
 import styles from "./cardList.module.scss";
-import Nft_Icon from "../../../assets/icons-nft.png";
+import Nft_Icon from "@/assets/icons-nft.png";
 import axios from "axios";
 
 interface Nft {

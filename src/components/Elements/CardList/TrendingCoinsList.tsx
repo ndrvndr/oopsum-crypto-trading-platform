@@ -1,7 +1,7 @@
 import * as React from "react";
 import Image from "next/image";
 import styles from "./cardList.module.scss";
-import Fire_Icon from "../../../assets/fire.svg";
+import Fire_Icon from "@/assets/fire.svg";
 import axios from "axios";
 
 interface mappedCoin {

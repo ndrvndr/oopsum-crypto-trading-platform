@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Logo from "./Logo";
 import NavList from "./NavLists";
-import Logout_Icon from "../../../assets/aside-assets/logout.svg";
-import Sun_Icon from "../../../assets/aside-assets/sun.svg";
-import Moon_Icon from "../../../assets/aside-assets/moon.svg";
+import Logout_Icon from "@/assets/aside-assets/logout.svg";
+import Sun_Icon from "@/assets/aside-assets/sun.svg";
+import Moon_Icon from "@/assets/aside-assets/moon.svg";
 
 export default function Aside() {
   return (

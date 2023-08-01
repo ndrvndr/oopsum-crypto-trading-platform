@@ -1,7 +1,6 @@
 import ListAcademyCard from "@/components/Fragments/ListAcademyCard";
 import Image from "next/image";
 import PicLive from "@/assets/academy/picLive.svg";
-import AcademyCard from "@/components/Elements/AcademyCard";
 import SubscriptionCard from "@/components/Elements/Subscription";
 
 export default function Academy() {
