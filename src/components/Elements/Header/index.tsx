@@ -4,9 +4,19 @@ import Profile from "../../../assets/profile.svg";
 import Search_Icon from "../../../assets/aside-assets/search.svg";
 import Notification_Icon from "../../../assets/aside-assets/notification.svg";
 import DropDown_Icon from "../../../assets/aside-assets/dropDown.svg";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Header() {
   const [currentDate, setCurrentDate] = React.useState("");
+
+  const pathName = usePathname();
+  let modifiedPathName;
+
+  if (pathName === "/") {
+    modifiedPathName = "Dashboard";
+  } else {
+    modifiedPathName = pathName.charAt(1).toUpperCase() + pathName.slice(2);
+  }
 
   React.useEffect(() => {
     const date = new Date().toLocaleDateString("en-GB", {
@@ -20,7 +30,7 @@ export default function Header() {
   return (
     <header className='flex justify-between h-[90px] sticky top-0 bg-[#0D0D0D]'>
       <div>
-        <h1>Dashboard</h1>
+        <h1>{modifiedPathName}</h1>
         <p>Updated on {currentDate}</p>
       </div>
 
