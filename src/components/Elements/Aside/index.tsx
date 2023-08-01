@@ -2,10 +2,14 @@ import Image from "next/image";
 import Logo from "./Logo";
 import NavList from "./NavLists";
 import Logout_Icon from "@/assets/aside-assets/logout.svg";
-import Sun_Icon from "@/assets/aside-assets/sun.svg";
-import Moon_Icon from "@/assets/aside-assets/moon.svg";
+import { BsSun, BsMoon } from "react-icons/bs";
+import * as React from "react";
 
 export default function Aside() {
+  const [isDark, setIsDark] = React.useState(true);
+  const handleClickButton = () => {
+    setIsDark(!isDark);
+  };
   return (
     <aside>
       <div>
@@ -20,11 +24,21 @@ export default function Aside() {
         </button>
 
         <div className='darkMode-button'>
-          <button className='sun-container'>
-            <Image src={Sun_Icon} alt='Sun Icon' />
+          <button
+            onClick={handleClickButton}
+            className={`sun-container ${
+              isDark ? "bg-transparent text-white" : "bg-[#fae529]"
+            }`}
+          >
+            <BsSun size={14} />
           </button>
-          <button className='moon-container'>
-            <Image src={Moon_Icon} alt='Moon Icon' />
+          <button
+            onClick={handleClickButton}
+            className={`moon-container ${
+              isDark ? "bg-[#fae529]" : "bg-transparent text-white"
+            }`}
+          >
+            <BsMoon size={14} />
           </button>
         </div>
       </div>

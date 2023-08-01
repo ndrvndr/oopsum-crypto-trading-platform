@@ -53,7 +53,7 @@ export default function Header() {
 
         <div className='flex items-center justify-center'>
           <div className='bg-[#151718] rounded-full mr-3'>
-            <Image src={Profile} width={50} height={50} alt='Profile Icon' />
+            <Image src={Profile} width={49} height={49} alt='Profile Icon' />
           </div>
           <span className='mr-2 text-white'>Alexim</span>
           <Image src={DropDown_Icon} alt='Drop Down Icon' />
