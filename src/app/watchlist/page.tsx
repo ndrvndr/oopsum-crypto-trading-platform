@@ -135,7 +135,8 @@ export default async function Watchlist() {
             </span>
           </div>
 
-          {topCoins.data.map((coin: Coin) => {
+          {topCoins.data.map((coin: Coin, index: number) => {
+            const number = index + 1;
             const formattedSymbol = String(coin.symbol).toLocaleUpperCase();
             const formattedPrice = Number(coin.current_price).toLocaleString();
             const formattedMarketCap = Number(coin.market_cap).toLocaleString();
@@ -154,7 +155,7 @@ export default async function Watchlist() {
               >
                 <span className='text-white font-medium text-xs w-[42px] flex justify-end items-center'>
                   <Image src={Star_Icon} alt='Star Icon' />
-                  <span className='ml-[10px]'>1</span>
+                  <span className='ml-[10px]'>{number}</span>
                 </span>
                 <span className='text-white font-medium text-xs w-[222px] pl-4 flex items-center'>
                   <Image
