@@ -8,6 +8,8 @@ import moreVertical from "@/assets/watchlist/moreVertical.svg";
 import Info_Icon from "@/assets/watchlist/info-circle.svg";
 import Star_Icon from "@/assets/watchlist/star.svg";
 import Drag_Icon from "@/assets/watchlist/drag.svg";
+import upPercent_Icon from "@/assets/watchlist/upPercent.svg";
+import downPercent_Icon from "@/assets/watchlist/downPercent.svg";
 import Image from "next/image";
 
 interface mappedCoin {
@@ -177,9 +179,20 @@ export default async function Watchlist() {
                     coin.price_change_percentage_24h >= 0
                       ? "[#2DC24E]"
                       : "[#F92C2C]"
-                  } font-medium text-xs w-[101px] text-end`}
+                  } font-medium text-xs w-[101px] flex justify-end`}
                 >
-                  {formattedPercent + "%"}
+                  <div className='flex items-center'>
+                    <Image
+                      src={
+                        coin.price_change_percentage_24h >= 0
+                          ? upPercent_Icon
+                          : downPercent_Icon
+                      }
+                      alt='Up Percent Icon'
+                      className='mr-1'
+                    />
+                    {formattedPercent + "%"}
+                  </div>
                 </span>
                 <span className='text-[#2DC24E] font-medium text-xs w-[80px] text-end'>
                   -
