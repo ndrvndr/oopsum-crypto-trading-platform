@@ -1,5 +1,3 @@
-z
-
 # oopsum Crypto Trading Platform - Figma Slicing
 
 ## Introduction
