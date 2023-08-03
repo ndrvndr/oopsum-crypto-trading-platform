@@ -3,6 +3,7 @@ import Edit_Icon from "@/assets/watchlist/edit-2.svg";
 import Add_Icon from "@/assets/watchlist/add.svg";
 import AddWhite_Icon from "@/assets/Portfolio/add.svg";
 import moreVertical from "@/assets/watchlist/moreVertical.svg";
+import chart_allocation from "@/assets/Portfolio/chart_allocation.svg";
 import Btc_Logo from "@/assets/Portfolio/btc-logo.svg";
 import Image from "next/image";
 import * as React from "react";
@@ -105,7 +106,9 @@ export default function Portfolio() {
         </button>
       </div>
 
-      <div className='w-full h-[34px] mt-[30px] mb-[60px]'></div>
+      <div className='w-full h-[34px] mt-[30px] mb-[60px]'>
+        <Image src={chart_allocation} alt='Chart Allocation Illustration' />
+      </div>
 
       <div>
         <span className='text-white text-[26px]'>Your holdings</span>

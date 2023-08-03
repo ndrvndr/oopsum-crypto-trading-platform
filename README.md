@@ -1,34 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# oopsum Crypto Trading Platform - Figma Slicing
 
-First, run the development server:
 
+
+
+## Introduction
+This repository contains the sliced design implementation of the "oopsum Crypto Trading Platform" as per the Figma design created by [Kuldeep Jilyani](https://www.figma.com/community/file/1259776540007423754/Crypto-Trading-Platform---Web3). The project is built using Next.js, Tailwind CSS and Cryptocurrency Data API from [CoinGecko](https://www.coingecko.com/en/api/documentation).
+## Table of Contents
+
+[Introduction](#Introduction)
+## Live Production
+
+To view a live demo of the oopsum Crypto Trading Platform, please visit link_to_live_demo.
+
+
+## Installation
+
+Follow the steps below to set up the project locally on your machine:
+
+Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+    git clone https://github.com/your_username/oopsum-crypto-trading-platform.git
+    cd oopsum-crypto-trading-platform
+``` 
+Install the required dependencies:
+```bash
+    npm install
+    # or
+    yarn install
 ```
+## Usage
+After installing the dependencies, you can run the development server locally by using the following command:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```javascript
+    npm run dev
+    # or
+    yarn dev
+```
+Visit http://localhost:3000 in your web browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Tech Stack
 
-## Learn More
+The project is built using the following technologies:
 
-To learn more about Next.js, take a look at the following resources:
+Next.js, Tailwind CSS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Data from CoinGecko API
+The oopsum Crypto Trading Platform fetches data from the [CoinGecko](https://www.coingecko.com/en/api/documentation) public API to display the following information:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Top Coins
+The top coins are fetched from the CoinGecko API and displayed with their respective names, symbols, market prices, logo, and ATL to current price percentage.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Trending Coins
+The trending coins are obtained from the CoinGecko API based on their recent popularity and displayed accordingly.
+
+### NFT (Non-Fungible Tokens)
+Information about Non-Fungible Tokens (NFTs) is retrieved from the CoinGecko API and shown along with relevant details.
+
+To access the CoinGecko API and fetch the required data, the project uses the axios library or any other suitable library.
+## Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to create a pull request or open an issue.
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b my-feature-branch`.
+3. Make your changes and commit them: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin my-feature-branch`.
+5. Submit a pull request.
+## License
+The oopsum Crypto Trading Platform is open-source software licensed under the MIT License. Feel free to use, modify, and distribute the code as per the terms of the license.
