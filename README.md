@@ -12,7 +12,7 @@ This repository contains the sliced design implementation of the "oopsum Crypto 
 
 ## Live Production
 
-To view a live demo of the oopsum Crypto Trading Platform, please visit link_to_live_demo.
+To view a live demo of the oopsum Crypto Trading Platform, please visit [oopsum.vercel.app](https://oopsum.vercel.app/).
 
 ## Installation
 
