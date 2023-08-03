@@ -72,11 +72,11 @@ export default async function Watchlist() {
         </div>
 
         <div className='flex'>
-          <button className='flex bg-[#1A1D1E] px-6 rounded-[28px] items-center mr-[10px]'>
+          <button className='h-fit flex bg-[#1A1D1E] pt-[10px] pr-6 pb-[10px] pl-6 rounded-[28px] items-center mr-[10px]'>
             <Image src={Edit_Icon} alt='Edit Icon' />
             <span className='font-medium text-white ml-1'>Edit</span>
           </button>
-          <button className='flex bg-[#77ED91] px-6 rounded-[28px] items-center'>
+          <button className='h-fit flex bg-[#77ED91] pt-[10px] pr-6 pb-[10px] pl-6 rounded-[28px] items-center'>
             <Image src={Add_Icon} alt='Edit Icon' />
             <span className='font-medium ml-1'>New watchlist</span>
           </button>
