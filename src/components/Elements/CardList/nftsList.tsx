@@ -12,19 +12,19 @@ interface Nft {
   contract_address: string;
 }
 
-// export async function getNftsList() {
-//   const response = await axios.get(
-//     "https://api.coingecko.com/api/v3/nfts/list?per_page=7&page=1"
-//   );
+export async function getNftsList() {
+  const response = await axios.get(
+    "https://api.coingecko.com/api/v3/nfts/list?per_page=7&page=1"
+  );
 
-//   return {
-//     response: response.data,
-//     revalidate: 300,
-//   };
-// }
+  return {
+    response: response.data,
+    revalidate: 300,
+  };
+}
 
 export default async function NftsList() {
-  // const nftsList = await getNftsList();
+  const nftsList = await getNftsList();
 
   function truncateAddress(address: string) {
     return `${address.slice(0, 10)}...${address.slice(-8)}`;
@@ -41,7 +41,7 @@ export default async function NftsList() {
         <span className='text-[#77ED91] font-medium text-sm'>See all</span>
       </div>
 
-      {/* <ul className='space-y-2'>
+      <ul className='space-y-2'>
         {nftsList.response.slice(0, 5).map((nft: Nft, index: number) => {
           const listNumber = index + 1;
           return (
@@ -67,7 +67,7 @@ export default async function NftsList() {
             </li>
           );
         })}
-      </ul> */}
+      </ul>
     </div>
   );
 }

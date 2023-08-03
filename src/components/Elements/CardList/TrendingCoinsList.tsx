@@ -22,41 +22,41 @@ interface Coin {
   price: number;
 }
 
-// export async function getBitcoinPrice() {
-//   try {
-//     const response = await axios.get(
-//       "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
-//     );
+export async function getBitcoinPrice() {
+  try {
+    const response = await axios.get(
+      "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
+    );
 
-//     return response.data.bitcoin.usd;
-//   } catch (error) {
-//     console.error("Error fetching Bitcoin price:", error);
-//     throw error;
-//   }
-// }
+    return response.data.bitcoin.usd;
+  } catch (error) {
+    console.error("Error fetching Bitcoin price:", error);
+    throw error;
+  }
+}
 
-// export async function getTrendingCoins() {
-//   const response = await axios.get(
-//     "https://api.coingecko.com/api/v3/search/trending"
-//   );
+export async function getTrendingCoins() {
+  const response = await axios.get(
+    "https://api.coingecko.com/api/v3/search/trending"
+  );
 
-//   const mappedData = response.data.coins.map((coin: mappedCoin) => ({
-//     id: coin.item.coin_id,
-//     image: coin.item.thumb,
-//     name: coin.item.name,
-//     symbol: coin.item.symbol,
-//     price: coin.item.price_btc,
-//   }));
+  const mappedData = response.data.coins.map((coin: mappedCoin) => ({
+    id: coin.item.coin_id,
+    image: coin.item.thumb,
+    name: coin.item.name,
+    symbol: coin.item.symbol,
+    price: coin.item.price_btc,
+  }));
 
-//   return {
-//     data: mappedData,
-//     revalidate: 300,
-//   };
-// }
+  return {
+    data: mappedData,
+    revalidate: 300,
+  };
+}
 
 export default async function TrendingCoinsList() {
-  // const trendingCoins = await getTrendingCoins();
-  // const bitcoinPrice = await getBitcoinPrice();
+  const trendingCoins = await getTrendingCoins();
+  const bitcoinPrice = await getBitcoinPrice();
 
   return (
     <div className={styles.card_list}>
@@ -69,7 +69,7 @@ export default async function TrendingCoinsList() {
         <span className='text-[#77ED91] font-medium text-sm'>See all</span>
       </div>
 
-      {/* <ul className='space-y-2'>
+      <ul className='space-y-2'>
         {trendingCoins.data.slice(0, 5).map((coin: Coin, index: number) => {
           const listNumber = index + 1;
           const coinPriceInUSD = (coin.price * bitcoinPrice).toFixed(2);
@@ -97,7 +97,7 @@ export default async function TrendingCoinsList() {
             </li>
           );
         })}
-      </ul> */}
+      </ul>
     </div>
   );
 }
